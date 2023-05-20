@@ -1,6 +1,7 @@
 let form = document.getElementById("form");
 let input = document.getElementById("input");
 let msg = document.getElementById("msg");
+let posts = document.getElementById("posts");
 
 /**
  * ! Buton Click -> Submit
@@ -23,5 +24,20 @@ let formValidation = () => {
     else{
         console.log("success");
         msg.innerHTML = "";
+        acceptData();
     }
+};
+
+let data = {};
+
+let acceptData = () => {
+    data["text"] = input.value;
+    console.log(data);
+    createPost();
+    
 }
+
+
+let createPost = () => {
+    posts.innerHTML = data.text;
+};
